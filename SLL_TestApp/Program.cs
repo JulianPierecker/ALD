@@ -13,12 +13,13 @@ namespace SLL_TestApp
         {
             SingleLinkedList<int> myList = new SingleLinkedList<int>();
             myList.Add(1);
-            myList.Add(2);
-            myList.Add(3);
-            myList.Add(4);
-            myList.Add(5);
 
-            bool exists = myList.Contains(6);
+            bool exists = myList.Contains(3);
+
+            while (myList.Remove(1))
+            {
+
+            }
 
             Console.WriteLine(exists.ToString());
             Console.ReadLine();
