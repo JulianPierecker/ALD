@@ -1,0 +1,6 @@
+C:\Users\piere\source\repos\ALD\SingleLinkedList\bin\Debug\SingleLinkedList.dll
+C:\Users\piere\source\repos\ALD\SingleLinkedList\bin\Debug\SingleLinkedList.pdb
+C:\Users\piere\source\repos\ALD\SingleLinkedList\obj\Debug\SingleLinkedList.csproj.AssemblyReference.cache
+C:\Users\piere\source\repos\ALD\SingleLinkedList\obj\Debug\SingleLinkedList.csproj.CoreCompileInputs.cache
+C:\Users\piere\source\repos\ALD\SingleLinkedList\obj\Debug\SingleLinkedList.dll
+C:\Users\piere\source\repos\ALD\SingleLinkedList\obj\Debug\SingleLinkedList.pdb
