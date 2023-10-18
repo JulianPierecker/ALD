@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SingleLinkedList
 {
-    internal class Node<T>
+    public class Node<T>
     {
         public Node(T item)
         {
@@ -14,9 +14,14 @@ namespace SingleLinkedList
         }
         public Node<T> m_next { get; set; }
         public T m_data { get; set; }
+        public int m_index { get; set; }
     }
     public class SingleLinkedList<T>
     {
+        public SingleLinkedList() 
+        { 
+            m_count = 0;
+        }
         Node<T> m_head { get; set; }
         Node<T> m_last { get; set; }
         int m_count { get; set; }
@@ -25,6 +30,7 @@ namespace SingleLinkedList
         {
             m_count++;
             Node<T> tmp = new Node<T>(item);
+            tmp.m_index = m_count-1;
             if(m_head == null) 
             {
                 m_head = tmp;
@@ -32,8 +38,10 @@ namespace SingleLinkedList
                 return;
             }
 
-            m_last.m_next = tmp;
-            m_last = tmp;
+            //  Referenz von vorherigem Node auf akutelles Node wird gesetzt: N1 --> N2
+            m_last.m_next = tmp;   
+            //  Das aktuelle Node wird auf m_last Node gesetzt
+            m_last = tmp;       
         }
 
         public bool Contains(T item)
@@ -52,20 +60,65 @@ namespace SingleLinkedList
         {
             Node<T> previous = m_head;
 
-            //if (m_head.m_data.Equals(item)) {m_head. }
+            // Wenn zu löschendes Node dem m_head Node entspricht --> setze nächstes Node als m_head Node
+            if (previous.m_data.Equals(item))
+            {
+                m_head = m_head.m_next;
+            }
 
             for (Node<T> i = m_head; i != null; i = i.m_next)
             {
                 if (i.m_data.Equals(item))
                 {
+                    // Referenz des aktuellen Nodes, welcher auf nächsten Node zeigt, dem vorherigen Node übergeben 
                     previous.m_next = i.m_next;
                     return true;
                 }
-
                 previous = i;
             }
+            
             return false;
 
+        }
+
+        public bool IsObjectAtIndex(T value, int index)
+        {
+            for (Node<T> i = m_head; i != null; i = i.m_next)
+            {
+                if (i.m_index.Equals(index) && i.m_data.Equals(value))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public Node<T> FindByIndex(int index)
+        {
+            for (Node<T> i = m_head; i != null; i = i.m_next)
+            {
+                if (i.m_index.Equals(index))
+                {
+                    return i;
+                }
+            }
+            // ToDo: Abfangen, falls Index nicht vorhanden
+            return null;
+        }
+
+        public int Count()
+        {
+            return m_count;
+        }
+
+        public void Clear()
+        {
+            if (m_head != null)
+            {
+                m_head = null;
+                m_last = null;
+                m_count = 0;
+            }
         }
     }
 }

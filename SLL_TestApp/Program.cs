@@ -12,16 +12,24 @@ namespace SLL_TestApp
         static void Main(string[] args)
         {
             SingleLinkedList<int> myList = new SingleLinkedList<int>();
-            myList.Add(1);
+            myList.Add(5);
+            myList.Add(3);
+            myList.Add(2);
+            myList.Add(6);
 
-            bool exists = myList.Contains(3);
-
-            while (myList.Remove(1))
-            {
-
-            }
-
-            Console.WriteLine(exists.ToString());
+            //Console.WriteLine(myList.Contains(5));
+            
+            //Console.WriteLine(myList.Remove(5));
+            
+            //Console.WriteLine(myList.IsObjectAtIndex(5,0));
+            
+            //Console.WriteLine(myList.FindByIndex(4).m_data);
+            
+            //Console.WriteLine(myList.Count());
+            
+            //myList.Clear();
+            //Console.WriteLine(myList.Count());
+            
             Console.ReadLine();
 
         }
