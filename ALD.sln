@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLL_TestApp", "SLL_TestApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLL_TestCase", "SLL_TestCase\SLL_TestCase.csproj", "{EF7D9A57-79DE-4AEF-8D2F-8A3F97B0E7DA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spellchecker", "Spellchecker\Spellchecker.csproj", "{F383ADCC-9AA2-42D6-8D59-7E9ABB914B2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EF7D9A57-79DE-4AEF-8D2F-8A3F97B0E7DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF7D9A57-79DE-4AEF-8D2F-8A3F97B0E7DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF7D9A57-79DE-4AEF-8D2F-8A3F97B0E7DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F383ADCC-9AA2-42D6-8D59-7E9ABB914B2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F383ADCC-9AA2-42D6-8D59-7E9ABB914B2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F383ADCC-9AA2-42D6-8D59-7E9ABB914B2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F383ADCC-9AA2-42D6-8D59-7E9ABB914B2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

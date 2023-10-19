@@ -18,12 +18,20 @@ namespace SLL_TestApp
             myList.Add(6);
 
             //Console.WriteLine(myList.Contains(5));
-            
+
             //Console.WriteLine(myList.Remove(5));
-            
+
             //Console.WriteLine(myList.IsObjectAtIndex(2,2));
+
+            try
+            {
+                Console.WriteLine(myList.FindByIndex(12));
+            }
+            catch (IndexOutOfRangeException e)
+            {
+                Console.WriteLine(e.Message.ToString());
+            }
             
-            //Console.WriteLine(myList.FindByIndex(3).m_data);
             
             //Console.WriteLine(myList.Count());
             

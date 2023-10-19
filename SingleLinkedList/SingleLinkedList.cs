@@ -93,19 +93,18 @@ namespace SingleLinkedList
             return false;
         }
 
-        public Node<T> FindByIndex(int index)
+        public T FindByIndex(int index)
         {
             int cnt = 0;
             for (Node<T> i = m_head; i != null; i = i.m_next)
             {
                 if (cnt == index)
                 {
-                    return i;
+                    return i.m_data;
                 }
                 cnt++;
             }
-            // ToDo: Abfangen, falls Index nicht vorhanden
-            return null;
+            throw new IndexOutOfRangeException();
         }
 
         public int Count()
