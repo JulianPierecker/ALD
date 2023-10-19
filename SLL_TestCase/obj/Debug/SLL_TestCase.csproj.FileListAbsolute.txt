@@ -8,3 +8,13 @@ C:\Users\piere\source\repos\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.csproj.CoreC
 C:\Users\piere\source\repos\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.csproj.CopyComplete
 C:\Users\piere\source\repos\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.exe
 C:\Users\piere\source\repos\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.pdb
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\bin\Debug\SLL_TestCase.exe.config
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\bin\Debug\SLL_TestCase.exe
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\bin\Debug\SLL_TestCase.pdb
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\bin\Debug\SingleLinkedList.dll
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\bin\Debug\SingleLinkedList.pdb
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.csproj.AssemblyReference.cache
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.csproj.CoreCompileInputs.cache
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.csproj.CopyComplete
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.exe
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestCase\obj\Debug\SLL_TestCase.pdb

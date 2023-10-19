@@ -14,7 +14,6 @@ namespace SingleLinkedList
         }
         public Node<T> m_next { get; set; }
         public T m_data { get; set; }
-        public int m_index { get; set; }
     }
     public class SingleLinkedList<T>
     {
@@ -30,7 +29,6 @@ namespace SingleLinkedList
         {
             m_count++;
             Node<T> tmp = new Node<T>(item);
-            tmp.m_index = m_count-1;
             if(m_head == null) 
             {
                 m_head = tmp;
@@ -83,24 +81,28 @@ namespace SingleLinkedList
 
         public bool IsObjectAtIndex(T value, int index)
         {
+            int cnt = 0;
             for (Node<T> i = m_head; i != null; i = i.m_next)
             {
-                if (i.m_index.Equals(index) && i.m_data.Equals(value))
+                if (cnt == index && i.m_data.Equals(value))
                 {
                     return true;
                 }
+                cnt++;
             }
             return false;
         }
 
         public Node<T> FindByIndex(int index)
         {
+            int cnt = 0;
             for (Node<T> i = m_head; i != null; i = i.m_next)
             {
-                if (i.m_index.Equals(index))
+                if (cnt == index)
                 {
                     return i;
                 }
+                cnt++;
             }
             // ToDo: Abfangen, falls Index nicht vorhanden
             return null;

@@ -21,9 +21,9 @@ namespace SLL_TestApp
             
             //Console.WriteLine(myList.Remove(5));
             
-            //Console.WriteLine(myList.IsObjectAtIndex(5,0));
+            //Console.WriteLine(myList.IsObjectAtIndex(2,2));
             
-            //Console.WriteLine(myList.FindByIndex(4).m_data);
+            //Console.WriteLine(myList.FindByIndex(3).m_data);
             
             //Console.WriteLine(myList.Count());
             
