@@ -8,13 +8,3 @@ C:\Users\piere\source\repos\ALD\SLL_TestApp\bin\Debug\SingleLinkedList.pdb
 C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.csproj.CopyComplete
 C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.exe
 C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.pdb
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\SLL_TestApp.exe.config
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\SLL_TestApp.exe
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\SLL_TestApp.pdb
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\SingleLinkedList.dll
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\SingleLinkedList.pdb
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.csproj.AssemblyReference.cache
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.csproj.CoreCompileInputs.cache
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.csproj.CopyComplete
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.exe
-C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.pdb

@@ -21,6 +21,8 @@ namespace Spellchecker
             Console.WriteLine("Bitte gib einen Satz ein:");
             string[] eingabetext_seperated = Console.ReadLine().Split(' ');
 
+            Console.WriteLine("\nTestergebnis:\n");
+
             for (int i = 0; i < eingabetext_seperated.Length; i++)
             {
                 if (myList.Contains(eingabetext_seperated[i]))
