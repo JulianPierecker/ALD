@@ -31,7 +31,7 @@ namespace SLL_TestCase
             for (int i = 0; i < n; i++)
             {
                 // Prüfen, an welchem Index welcher Wert der myList hinzugefügt wurde
-                Console.WriteLine("An Index: " + i.ToString() + " wurde der Wert: " + myList.FindByIndex(i).m_data.ToString() + " gespeichert.");
+                Console.WriteLine("An Index: " + i.ToString() + " wurde der Wert: " + myList.FindByIndex(i).ToString() + " gespeichert.");
             }
 
             // Test, ob z.B str1 nach Entfernen der List nichtmehr vorhanden ist
