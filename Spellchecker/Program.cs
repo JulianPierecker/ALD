@@ -18,9 +18,8 @@ namespace Spellchecker
 
             for (int i = 3; i < lines.Length; i++) { myList.Add(lines[i]); }
 
-            Console.WriteLine("Bitte gib einen deutschen Satz ein:\n");
-            string eingabetext = Console.ReadLine();
-            string[] eingabetext_seperated = eingabetext.Split(' ');
+            Console.WriteLine("Bitte gib einen Satz ein:");
+            string[] eingabetext_seperated = Console.ReadLine().Split(' ');
 
             for (int i = 0; i < eingabetext_seperated.Length; i++)
             {
