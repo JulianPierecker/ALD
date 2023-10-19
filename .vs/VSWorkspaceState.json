@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SLL_TestCase"
+    "\\SLL_TestCase",
+    "\\Spellchecker"
   ],
-  "SelectedNode": "\\SLL_TestCase\\Program.cs",
+  "SelectedNode": "\\Spellchecker\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
