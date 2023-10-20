@@ -18,3 +18,5 @@ C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CoreC
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CopyComplete
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.exe
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.pdb
+C:\Users\piere\source\repos\ALD\ALD\Spellchecker\bin\Debug\ImportData.dll
+C:\Users\piere\source\repos\ALD\ALD\Spellchecker\bin\Debug\ImportData.pdb

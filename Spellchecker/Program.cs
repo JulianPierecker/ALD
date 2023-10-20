@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SingleLinkedList;
+using System.Collections;
+using ImportData;
 
 namespace Spellchecker
 {
@@ -12,32 +14,22 @@ namespace Spellchecker
     {
         static void Main(string[] args)
         {
-            string[] lines = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\german.dic");
-
-            SingleLinkedList<string> myList = new SingleLinkedList<string>();
-
-            for (int i = 3; i < lines.Length; i++) { myList.Add(lines[i]); }
+            Import data = new Import("german.dic");
+            data.Fill_list();
 
             Console.WriteLine("Bitte gib einen Satz ein:");
-            string[] eingabetext_seperated = Console.ReadLine().Split(' ');
+            string[] input_seperated = Console.ReadLine().Split(' ');
 
             Console.WriteLine("\nTestergebnis:\n");
 
-            for (int i = 0; i < eingabetext_seperated.Length; i++)
+            foreach (string s in input_seperated)
             {
-                if (myList.Contains(eingabetext_seperated[i]))
-                {
+                if (data.List.Contains(s))
                     Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write(eingabetext_seperated[i] + " ");
-                }
                 else
-                {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.Write(eingabetext_seperated[i] + " ");
-                }
-
-            }                   
-                
+                Console.Write(s + " ");
+            }
             Console.ReadLine();
         }
     }
