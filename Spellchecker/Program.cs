@@ -27,6 +27,7 @@ namespace Spellchecker
             {
                 if (myList.Contains(eingabetext_seperated[i]))
                 {
+                    Console.ForegroundColor = ConsoleColor.White;
                     Console.Write(eingabetext_seperated[i] + " ");
                 }
                 else

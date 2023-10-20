@@ -8,3 +8,13 @@ C:\Users\piere\source\repos\ALD\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.C
 C:\Users\piere\source\repos\ALD\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CopyComplete
 C:\Users\piere\source\repos\ALD\ALD\Spellchecker\obj\Debug\Spellchecker.exe
 C:\Users\piere\source\repos\ALD\ALD\Spellchecker\obj\Debug\Spellchecker.pdb
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Spellchecker.exe.config
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Spellchecker.exe
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Spellchecker.pdb
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\SingleLinkedList.dll
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\SingleLinkedList.pdb
+C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.AssemblyReference.cache
+C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CoreCompileInputs.cache
+C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CopyComplete
+C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.exe
+C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.pdb
