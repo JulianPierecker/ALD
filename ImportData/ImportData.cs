@@ -4,14 +4,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ImportData;
 using SingleLinkedList;
 
-namespace ImportData
+namespace Import
 {
-    public class Import
+    public class ImportData
     {
-        public Import(string filename)
+        public ImportData(string filename)
         {
             _filename = filename;
         }
@@ -27,14 +26,11 @@ namespace ImportData
         }
         public SingleLinkedList<string> List
         {
-            get
-            {
-                return _list;
-            }
+            get {return _list;}
             set { }
         }
 
-        public void Fill_list()
+        public void ReadDataFromFile()
         {
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
             {
