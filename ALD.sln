@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spellchecker", "Spellchecke
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportData", "ImportData\ImportData.csproj", "{6BDA3B43-39A8-4767-8BB4-A132DFA83698}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bibliotheken", "Bibliotheken", "{B21AB1D1-94BA-4123-89EE-E6A25769EF3E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5FFFFD3-096D-415D-B0C4-0C452E93E647} = {B21AB1D1-94BA-4123-89EE-E6A25769EF3E}
+		{6BDA3B43-39A8-4767-8BB4-A132DFA83698} = {B21AB1D1-94BA-4123-89EE-E6A25769EF3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B52EC3DE-9773-41A6-B8DB-0BB45BC64D38}

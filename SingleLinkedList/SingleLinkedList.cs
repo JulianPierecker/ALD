@@ -74,17 +74,16 @@ namespace SingleLinkedList
                 }
                 previous = i;
             }
-            
             return false;
 
         }
 
-        public bool IsObjectAtIndex(T value, int index)
+        public bool IsObjectAtIndex(T item, int index)
         {
             int cnt = 0;
             for (Node<T> i = m_head; i != null; i = i.m_next)
             {
-                if (cnt == index && i.m_data.Equals(value))
+                if (cnt == index && i.m_data.Equals(item))
                 {
                     return true;
                 }
