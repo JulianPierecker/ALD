@@ -32,6 +32,7 @@ namespace Spellchecker
                     Console.ForegroundColor = ConsoleColor.Red;
                 Console.Write(s + " ");
             }
+            Console.ReadKey();
         }
     }
 }
