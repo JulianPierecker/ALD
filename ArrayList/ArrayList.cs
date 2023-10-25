@@ -28,5 +28,20 @@ namespace ArrayList
             m_array[m_length_puffer] = item;
         }
 
+        public void InsertAt (int index, T item) 
+        {
+            
+            for (int i = index; i < m_array.Length; i++)
+            {
+                m_array[i+1] = m_array[i];
+            }
+            m_array[index] = item;
+        }
+
+        public bool RemoveAt (int index) 
+        { 
+            
+        }
+
     }
 }
