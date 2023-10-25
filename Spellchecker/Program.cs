@@ -14,9 +14,10 @@ namespace Spellchecker
     {
         static void Main(string[] args)
         {
-            // Einlesen der Daten aus german.dic 
+            // Einlesen der Daten aus german.dic in eine SLL und ArrayList
             ImportData data = new ImportData("german.dic");
-            data.ReadDataFromFile();
+            data.ReadDataFromFileToSLL();
+            data.ReadDataFromFileToArrayList();
 
             Console.WriteLine("Bitte gib einen Satz ein:");
             string[] input_seperated = Console.ReadLine().Split(' ');
@@ -26,7 +27,7 @@ namespace Spellchecker
             // Überprüfen des Inhalts des eingegebenen Textes, ob in german.dic vorhanden (+ Faerbung des Textes)
             foreach (string s in input_seperated)
             {
-                if (data.List.Contains(s))
+                if (data.sllList.Contains(s))
                     Console.ForegroundColor = ConsoleColor.White;
                 else
                     Console.ForegroundColor = ConsoleColor.Red;

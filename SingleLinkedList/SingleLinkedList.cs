@@ -154,10 +154,5 @@ namespace SingleLinkedList
         {
             throw new NotImplementedException();
         }
-
-        void IDisposable.Dispose()
-        {
-            // Nicht nötig
-        }
     }
 }

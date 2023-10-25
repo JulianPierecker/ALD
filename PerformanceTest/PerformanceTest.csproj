@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6BDA3B43-39A8-4767-8BB4-A132DFA83698}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ImportData</RootNamespace>
-    <AssemblyName>ImportData</AssemblyName>
+    <ProjectGuid>{128F38BB-5E99-4978-8540-F66F367384E8}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>PerformanceTest</RootNamespace>
+    <AssemblyName>PerformanceTest</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,13 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ImportData.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ArrayList\ArrayList.csproj">
       <Project>{0b999f6b-1078-4738-b3ca-4f071c2f96a5}</Project>
       <Name>ArrayList</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ImportData\ImportData.csproj">
+      <Project>{6bda3b43-39a8-4767-8bb4-a132dfa83698}</Project>
+      <Name>ImportData</Name>
     </ProjectReference>
     <ProjectReference Include="..\SingleLinkedList\SingleLinkedList.csproj">
       <Project>{e5ffffd3-096d-415d-b0c4-0c452e93e647}</Project>
