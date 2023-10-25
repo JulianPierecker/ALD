@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,7 +16,7 @@ namespace SingleLinkedList
         public Node<T> m_next { get; set; }
         public T m_data { get; set; }
     }
-    public class SingleLinkedList<T>
+    public class SingleLinkedList<T> : IEnumerable, IEnumerator
     {
         public SingleLinkedList() 
         { 
@@ -24,6 +25,13 @@ namespace SingleLinkedList
         Node<T> m_head { get; set; }
         Node<T> m_last { get; set; }
         int m_count { get; set; }
+
+        private Node<T> m_currentNode;
+
+        public object Current => m_currentNode.m_data;
+
+        // Optimierung während dem Compilen. Man spart sich extra Cast während der Laufzeit
+
 
         public void Add(T item)
         {
@@ -119,6 +127,37 @@ namespace SingleLinkedList
                 m_last = null;
                 m_count = 0;
             }
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return this;
+        }
+
+        public bool MoveNext()
+        {
+            // Wenn keine Nodes vorhanden sind
+            if (m_head == null) return false;
+
+            // Beim ersten Funktionsaufruf wird der currentNode auf m_head gesetzt
+            if (m_currentNode == null)
+            {
+                m_currentNode = m_head;
+                return true;
+            }
+
+            m_currentNode = m_currentNode.m_next;
+            return m_currentNode != null;
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IDisposable.Dispose()
+        {
+            // Nicht nötig
         }
     }
 }

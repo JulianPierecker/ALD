@@ -12,10 +12,11 @@ namespace SLL_TestApp
         static void Main(string[] args)
         {
             SingleLinkedList<int> myList = new SingleLinkedList<int>();
+            
             myList.Add(5);
-            myList.Add(3);
-            myList.Add(2);
-            myList.Add(6);
+            //myList.Add(3);
+            //myList.Add(2);
+            //myList.Add(6);
 
             //Console.WriteLine(myList.Contains(5));
 
@@ -37,7 +38,13 @@ namespace SLL_TestApp
             
             //myList.Clear();
             //Console.WriteLine(myList.Count());
-            
+
+            foreach (int i in myList) 
+            {
+                Console.WriteLine(i);
+            }
+
+
             Console.ReadLine();
 
         }
