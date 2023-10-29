@@ -55,13 +55,26 @@ namespace ArrayList
             // Überprüfen, ob Index innerhalb des Arrays möglich ist
             if (index < 0 || index >= m_array.Length)
                 return false;
-            // Ab dem Index den Wert von Index+1 auf Index kopieren
-            for (int i = index; i < m_array.Length-1; i++)
+
+            int cnt_default = 0;
+            int cnt_default_max = 0;
+            for (int i = 0; i < m_array.Length; i++)
             {
-                m_array[i] = m_array[i+1];
+                // Wert am Index auf default(T) setzen (Wert löschen)
+                if (i == index)
+                    m_array[i] = default(T);
+                // Überprüfen, wieviele Elemente default(T) als Wert besitzen
+                if (m_array[i].Equals(default(T)))
+                    cnt_default++;
+                else
+                    // Letzten Index merken, welcher Wert enthält, der ungleich default(T) ist
+                    cnt_default_max = i;
             }
-            // Letztes Element wegschneiden
-            Array.Resize(ref m_array, m_array.Length - 1);
+
+            // Wenn mehr als die Hälfte des Arrays default(T) entspricht, dann Array halbieren
+            if (cnt_default > (int)(m_array.Length / 2))
+                Array.Resize(ref m_array, cnt_default_max+1);
+
             return true;
         }
 
@@ -77,6 +90,7 @@ namespace ArrayList
                 }
             }
             return false;
+
         }
 
         public void Clear()
