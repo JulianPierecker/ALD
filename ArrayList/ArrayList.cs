@@ -51,7 +51,6 @@ namespace ArrayList
             }
         }
 
-        
         public void Add(T item)
         {
             if (m_length_puffer >= _array.Length)
@@ -71,7 +70,8 @@ namespace ArrayList
 
             if (m_length_puffer >= _array.Length)
                 Array.Resize<Node<T>>(ref _array, 2 * _array.Length);
-
+            
+            // Items ab dem gegebenen Index um 1 nach hinten kopieren
             Array.Copy(_array, index, _array, index + 1, _array.Length - (index + 1));
 
             // Item, am gegebenen index einfügen
@@ -84,6 +84,8 @@ namespace ArrayList
             if (index < 0 || index >= _array.Length)
                 throw new IndexOutOfRangeException();
 
+            // Items ab dem gegebenen Index um 1 nach vorn kopieren
+            // Item, welches entfernt werden soll, wird durch das Item des Nachfolgeitems überschrieben
             Array.Copy(_array, index + 1, _array, index, _array.Length - (index + 1));
 
             return true;
@@ -93,7 +95,7 @@ namespace ArrayList
         {
             for (int i = 0; i < _array.Length; i++)
             {
-                if (_array[i] != null)
+                if (_array[i].Value != null)
                 {
                     // Wenn gesuchtes Item dem Item in dem Array entspricht, dann an diesem Index löschen
                     if (_array[i].Value.Equals(item))
@@ -113,8 +115,8 @@ namespace ArrayList
             m_length_puffer = 0;
         }
 
-        public int Count() => _array.Length;
-        // member count
+        // Gibt Anzahl der hizugefügten Items zurück, nicht die tatsächliche Länge des Arrays
+        public int Count() => m_length_puffer;
 
     }
 }

@@ -21,7 +21,7 @@ namespace Import
 
         private SingleLinkedList<string> _sllList = new SingleLinkedList<string>();
 
-        private ArrayList<string> _arrayList = new ArrayList<string>();
+        private ArrayList<string> _arrayList = new ArrayList<string>(new string[1]);
 
         private string _filename;
 
@@ -47,39 +47,35 @@ namespace Import
 
         public void ReadDataFromFileToSLL()
         {
-            // Einlesezeit vergleichen
             timerSLL.Start();
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _sllList.Add(s);
             timerSLL.Stop();
             Console.WriteLine("Auslesezeit der SingleLinkedList Add-Methode: {0}", timerSLL.Elapsed);
 
-            timerSLL.Reset();
+            timerArrayList.Reset();
 
             timerSLL.Start();
-            _sllList.Remove("zytotoxischer");
+            _sllList.Remove("zytotoxisches");
             timerSLL.Stop();
             Console.WriteLine("Auslesezeit der SingleLinkedList Remove-Methode: {0}", timerSLL.Elapsed);
+
 
 
         }
 
         public void ReadDataFromFileToArrayList()
         {
-
-            // Einlesezeit vergleichen
             timerArrayList.Start();
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _arrayList.Add(s);
             timerArrayList.Stop();
             Console.WriteLine("Auslesezeit der ArrayList Add-Methode: {0}", timerArrayList.Elapsed);
 
-            _arrayList.InsertAt(2000000, "15");
-
             timerArrayList.Reset();
 
             timerArrayList.Start();
-            _arrayList.Remove("zytotoxischer");
+            _arrayList.Remove("zytotoxisches");
             timerArrayList.Stop();
             Console.WriteLine("Auslesezeit der ArrayList Remove-Methode: {0}", timerArrayList.Elapsed);
         }

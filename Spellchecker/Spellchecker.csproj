@@ -50,8 +50,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ArrayList\ArrayList.csproj">
+      <Project>{0b999f6b-1078-4738-b3ca-4f071c2f96a5}</Project>
+      <Name>ArrayList</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ImportData\ImportData.csproj">
-      <Project>{6bda3b43-39a8-4767-8bb4-a132dfa83698}</Project>
+      <Project>{b918aa19-4070-4253-b1da-8877ae83ab85}</Project>
       <Name>ImportData</Name>
     </ProjectReference>
     <ProjectReference Include="..\SingleLinkedList\SingleLinkedList.csproj">

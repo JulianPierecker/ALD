@@ -22,8 +22,7 @@ namespace SLL_TestApp
             myArrayList.Add(5);
             myArrayList.Add(6);
 
-            myArrayList.Remove(3);
-            
+            int cnt = myArrayList.Count();            
 
             Console.ReadKey();
 
