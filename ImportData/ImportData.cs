@@ -47,24 +47,41 @@ namespace Import
 
         public void ReadDataFromFileToSLL()
         {
+            // Einlesezeit vergleichen
             timerSLL.Start();
-
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _sllList.Add(s);
-
             timerSLL.Stop();
-            Console.WriteLine("Auslesezeit der SingleLinkedList: {0}", timerSLL.Elapsed);
+            Console.WriteLine("Auslesezeit der SingleLinkedList Add-Methode: {0}", timerSLL.Elapsed);
+
+            timerSLL.Reset();
+
+            timerSLL.Start();
+            _sllList.Remove("zytotoxischer");
+            timerSLL.Stop();
+            Console.WriteLine("Auslesezeit der SingleLinkedList Remove-Methode: {0}", timerSLL.Elapsed);
+
+
         }
 
         public void ReadDataFromFileToArrayList()
         {
-            timerArrayList.Start();
 
+            // Einlesezeit vergleichen
+            timerArrayList.Start();
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _arrayList.Add(s);
-
             timerArrayList.Stop();
-            Console.WriteLine("Auslesezeit der ArrayList: {0}", timerArrayList.Elapsed);
+            Console.WriteLine("Auslesezeit der ArrayList Add-Methode: {0}", timerArrayList.Elapsed);
+
+            _arrayList.InsertAt(2000000, "15");
+
+            timerArrayList.Reset();
+
+            timerArrayList.Start();
+            _arrayList.Remove("zytotoxischer");
+            timerArrayList.Stop();
+            Console.WriteLine("Auslesezeit der ArrayList Remove-Methode: {0}", timerArrayList.Elapsed);
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SingleLinkedList;
 using ArrayList;
+using System.Collections;
 
 namespace SLL_TestApp
 {
@@ -12,14 +13,16 @@ namespace SLL_TestApp
     {
         static void Main(string[] args)
         {
-            ArrayList<int> myArrayList = new ArrayList<int>(5);
+            ArrayList<int> myArrayList = new ArrayList<int>(new int[1]);
             
-            myArrayList.Add(0);
             myArrayList.Add(1);
             myArrayList.Add(2);
             myArrayList.Add(3);
+            myArrayList.Add(4);
+            myArrayList.Add(5);
+            myArrayList.Add(6);
 
-            myArrayList.InsertAt(3, 4);
+            myArrayList.Remove(3);
             
 
             Console.ReadKey();
