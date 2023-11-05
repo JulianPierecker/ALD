@@ -18,13 +18,8 @@ namespace SLL_TestApp
             myArrayList.Add(1);
             myArrayList.Add(2);
             myArrayList.Add(3);
-            myArrayList.Add(4);
-            myArrayList.Add(5);
 
-            myArrayList.Remove(2);
-            myArrayList.Remove(3);
-            myArrayList.Remove(4);
-            myArrayList.Remove(5);
+            myArrayList.InsertAt(3, 4);
             
 
             Console.ReadKey();

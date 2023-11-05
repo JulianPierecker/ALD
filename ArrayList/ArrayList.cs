@@ -17,7 +17,23 @@ namespace ArrayList
         private T[] m_array;
         public T[] array => m_array;
 
-        //T this[int index] { get; set; }
+        public T this[int index]
+        {
+            get
+            {
+                if (index >= 0 && index < m_array.Length)
+                    return m_array[index];
+                else
+                    throw new IndexOutOfRangeException();
+            }
+            set
+            {
+                if (index >= 0 && index < m_array.Length)
+                    m_array[index] = value;
+                else
+                    throw new IndexOutOfRangeException();
+            }
+        }
 
         int m_length_puffer = 0;
         public void Add(T item)
@@ -28,16 +44,17 @@ namespace ArrayList
             // Hinzufügen neuer Werte
             m_array[m_length_puffer] = item;
             m_length_puffer++;
-
         }
 
         public void InsertAt (int index, T item) 
         {
             // Überprüfen, ob Index innerhalb des Arrays möglich ist
             if (index < 0 || index >= m_array.Length)
-                return;
-            // Altes Array um einen Index verlängern
-            Array.Resize(ref m_array, m_array.Length+1);
+                throw new IndexOutOfRangeException();
+
+            // Array um einen Index verlängern, wenn letzter Eintrag ungleich default(T) ist
+            if (!m_array[m_array.Length-1].Equals(default(T)))
+                Array.Resize(ref m_array, m_array.Length+1);
 
             // Alle Werte nach dem eingefügtem Item um 1 nach hinten verschieben (von hinten anfangend)
             for (int i = m_array.Length-2; i >= index; i--)
@@ -46,7 +63,6 @@ namespace ArrayList
             }
 
             // Item, am gegebenen index einfügen
-            // Wenn Index >= m_array.Length Exception werfen?
             m_array[index] = item;
         }
         
@@ -54,7 +70,7 @@ namespace ArrayList
         {
             // Überprüfen, ob Index innerhalb des Arrays möglich ist
             if (index < 0 || index >= m_array.Length)
-                return false;
+                throw new IndexOutOfRangeException();
 
             int cnt_default = 0;
             int cnt_default_max = 0;
@@ -71,7 +87,7 @@ namespace ArrayList
                     cnt_default_max = i;
             }
 
-            // Wenn mehr als die Hälfte des Arrays default(T) entspricht, dann Array halbieren
+            // Wenn mehr als die Hälfte des Arrays default(T) entspricht, dann Array verkleinern
             if (cnt_default > (int)(m_array.Length / 2))
                 Array.Resize(ref m_array, cnt_default_max+1);
 
