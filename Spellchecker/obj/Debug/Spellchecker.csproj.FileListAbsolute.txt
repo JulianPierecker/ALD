@@ -13,12 +13,12 @@ C:\Users\piere\source\repos\ALD\ALD\Spellchecker\bin\Debug\ImportData.pdb
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Spellchecker.exe.config
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Spellchecker.exe
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Spellchecker.pdb
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\ArrayList.dll
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\ImportData.dll
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\SingleLinkedList.dll
-C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\ArrayList.dll
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\ArrayList.pdb
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\ImportData.pdb
 C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\SingleLinkedList.pdb
-C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\ArrayList.pdb
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.AssemblyReference.cache
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CoreCompileInputs.cache
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.csproj.CopyComplete

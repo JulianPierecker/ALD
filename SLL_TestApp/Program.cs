@@ -21,6 +21,11 @@ namespace SLL_TestApp
             myArrayList.Add(4);
             myArrayList.Add(5);
             myArrayList.Add(6);
+            myArrayList.Add(7);
+            myArrayList.Add(8);
+
+            myArrayList.Remove(5);
+   
 
             int cnt = myArrayList.Count();            
 
