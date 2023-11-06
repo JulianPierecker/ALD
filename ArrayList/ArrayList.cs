@@ -53,7 +53,9 @@ namespace ArrayList
 
         public void Add(T item)
         {
-            if (m_length_puffer >= m_array.Length)
+            if (m_array.Length == 0)
+                Array.Resize<Node<T>>(ref m_array, 1);
+            else if (m_length_puffer >= m_array.Length)
                 Array.Resize<Node<T>>(ref m_array, 2 * m_array.Length);
 
             // Hinzufügen neuer Werte
@@ -65,7 +67,7 @@ namespace ArrayList
         public void InsertAt (int index, T item) 
         {
             // Überprüfen, ob Index innerhalb des Arrays möglich ist
-            if (index < 0 || index >= m_array.Length)
+            if (index < 0 || index >= m_length_puffer)
                 throw new IndexOutOfRangeException();
 
             if (m_length_puffer >= m_array.Length)

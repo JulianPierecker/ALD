@@ -13,18 +13,15 @@ namespace SLL_TestApp
     {
         static void Main(string[] args)
         {
-            ArrayList<int> myArrayList = new ArrayList<int>(new int[1]);
+            ArrayList<int> myArrayList = new ArrayList<int>(new int[0]);
             
+            myArrayList.Add(0);
             myArrayList.Add(1);
             myArrayList.Add(2);
             myArrayList.Add(3);
             myArrayList.Add(4);
-            myArrayList.Add(5);
-            myArrayList.Add(6);
-            myArrayList.Add(7);
-            myArrayList.Add(8);
 
-            myArrayList.Remove(5);
+            myArrayList.InsertAt(4,4);
    
 
             int cnt = myArrayList.Count();            

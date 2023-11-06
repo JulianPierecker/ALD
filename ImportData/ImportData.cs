@@ -21,7 +21,7 @@ namespace Import
 
         private SingleLinkedList<string> _sllList = new SingleLinkedList<string>();
 
-        private ArrayList<string> _arrayList = new ArrayList<string>(new string[1]);
+        private ArrayList<string> _arrayList = new ArrayList<string>(new string[0]);
 
         private string _filename;
 
