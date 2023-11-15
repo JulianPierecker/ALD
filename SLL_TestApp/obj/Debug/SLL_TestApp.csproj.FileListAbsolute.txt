@@ -20,3 +20,5 @@ C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.csproj.CoreCom
 C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.csproj.CopyComplete
 C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.exe
 C:\Users\piere\source\repos\ALD\SLL_TestApp\obj\Debug\SLL_TestApp.pdb
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\ArrayList.dll
+C:\Users\piere\source\repos\ALD\ALD\SLL_TestApp\bin\Debug\ArrayList.pdb
