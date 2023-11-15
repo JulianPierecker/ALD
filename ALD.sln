@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImportData", "ImportData\Im
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashtable", "Hashtable\Hashtable.csproj", "{B79EEEE6-8EE8-4525-B026-FCC529FAEB59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtableTestApp", "HashtableTestApp\HashtableTestApp.csproj", "{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{B79EEEE6-8EE8-4525-B026-FCC529FAEB59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B79EEEE6-8EE8-4525-B026-FCC529FAEB59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B79EEEE6-8EE8-4525-B026-FCC529FAEB59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

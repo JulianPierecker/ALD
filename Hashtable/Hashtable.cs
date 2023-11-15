@@ -16,15 +16,16 @@ namespace Hashtable
         private ArrayList<SingleLinkedList<Tuple<K,V>>> _arrayList;
         public Hashtable() 
         {
-            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(new SingleLinkedList<Tuple<K, V>>[_initArray.Count()]);
+            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(new SingleLinkedList<Tuple<K, V>>[10]);
         }
 
-        int randn = 0;
+        string value;
+        string key;
 
-        void Put(K key, V value)
+
+        public void Put(K key, V value)
         {
-            randn = GetHashCode();
-            int index = randn % _arrayList.Count();
+            int index = GetIndexFromKey();
 
             if (_arrayList[index] != null)
             {
@@ -50,10 +51,9 @@ namespace Hashtable
             }
         }
 
-        V Get(K key)
+        public V Get(K key)
         {
-            randn = GetHashCode();
-            int index = randn % _arrayList.Count();
+            int index = GetIndexFromKey();
 
             if (_arrayList[index] != null)
             {
@@ -66,16 +66,36 @@ namespace Hashtable
             throw new KeyNotFoundException();
         }
 
-        bool Remove(K key)
+        public bool Remove(K key)
         {
+            int index = GetIndexFromKey();
 
+            if (_arrayList[index] != null)
+            {
+                Tuple<K, V> tup = null;
+                foreach (Tuple<K, V> item in _arrayList[index])
+                {
+                    if (item.Item1.Equals(key))
+                    {
+                        tup = item;
+                    }
+                    else
+                    {
+                        tup = null;
+                    }
+                }
+                if (tup != null)
+                {
+                    _arrayList[index].Remove(tup);
+                    return true;
+                }
+            }
+            return false;
         }
 
-
-
-
-        string value;
-        string key;
-     
+        private int GetIndexFromKey()
+        { 
+            return GetHashCode() % _arrayList.Count(); 
+        }
     }
 }
