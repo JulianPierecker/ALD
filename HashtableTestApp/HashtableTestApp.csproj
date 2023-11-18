@@ -54,6 +54,10 @@
       <Project>{b79eeee6-8ee8-4525-b026-fcc529faeb59}</Project>
       <Name>Hashtable</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Person\Person.csproj">
+      <Project>{f8e6c04b-055c-4f59-9eba-695cb1578007}</Project>
+      <Name>Person</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -49,6 +49,10 @@
       <Project>{0b999f6b-1078-4738-b3ca-4f071c2f96a5}</Project>
       <Name>ArrayList</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Person\Person.csproj">
+      <Project>{f8e6c04b-055c-4f59-9eba-695cb1578007}</Project>
+      <Name>Person</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SingleLinkedList\SingleLinkedList.csproj">
       <Project>{e5ffffd3-096d-415d-b0c4-0c452e93e647}</Project>
       <Name>SingleLinkedList</Name>

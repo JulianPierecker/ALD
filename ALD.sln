@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hashtable", "Hashtable\Hash
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtableTestApp", "HashtableTestApp\HashtableTestApp.csproj", "{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Person", "Person\Person.csproj", "{F8E6C04B-055C-4F59-9EBA-695CB1578007}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E4C04CA-32F6-4BC3-8FA2-32D8FEDB258E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8E6C04B-055C-4F59-9EBA-695CB1578007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8E6C04B-055C-4F59-9EBA-695CB1578007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8E6C04B-055C-4F59-9EBA-695CB1578007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8E6C04B-055C-4F59-9EBA-695CB1578007}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{0B999F6B-1078-4738-B3CA-4F071C2F96A5} = {B21AB1D1-94BA-4123-89EE-E6A25769EF3E}
 		{B918AA19-4070-4253-B1DA-8877AE83AB85} = {B21AB1D1-94BA-4123-89EE-E6A25769EF3E}
 		{B79EEEE6-8EE8-4525-B026-FCC529FAEB59} = {B21AB1D1-94BA-4123-89EE-E6A25769EF3E}
+		{F8E6C04B-055C-4F59-9EBA-695CB1578007} = {B21AB1D1-94BA-4123-89EE-E6A25769EF3E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B52EC3DE-9773-41A6-B8DB-0BB45BC64D38}

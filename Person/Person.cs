@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hashtable;
 
 namespace Mensch
 {
@@ -12,8 +11,7 @@ namespace Mensch
         public string Name { get; set; }
         public string Geburtsort { get; set; }
         public int Alter { get; set; }
-
-        Hashtable<int, int> hasttab = new Hashtable<int, int>(1);
+        public int Hashsize { get; set; }
 
         public Person(string name, string geschlecht, int alter)
         {
@@ -29,10 +27,13 @@ namespace Mensch
 
         public override int GetHashCode()
         {
-            int result = (Name != null) ? Name.GetHashCode() : 0;
-            result = (result * 397) ^ (Geburtsort != null ? Geburtsort.GetHashCode() : 0);
-            result = (result * 397) ^ Alter; // Link both values using bitwise XOR
-            return result;
+            int hash = 17;
+            hash = hash + Name.GetHashCode();
+            hash = hash + Geburtsort.GetHashCode();
+            hash = hash + Alter.GetHashCode();
+            if (hash < 0)
+                hash = hash * (-1);
+            return hash % Hashsize;
         }
     }
 

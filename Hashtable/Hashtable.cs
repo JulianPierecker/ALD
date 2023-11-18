@@ -1,6 +1,5 @@
 ﻿using ArrayList;
 using SingleLinkedList;
-using Mensch;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,29 +9,28 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using Mensch;
 
-namespace Hashtable
+namespace Hashtables
 {
     public class Hashtable<K,V>
     {
         public Hashtable(int length = 1) 
         {
-            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(new SingleLinkedList<Tuple<K, V>>[length]);
+            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(_initArray);  
         }
 
-        private SingleLinkedList<Tuple<K, V>> _initArray;
+        private SingleLinkedList<Tuple<K, V>>[] _initArray = new SingleLinkedList<Tuple<K, V>>[800000];
         private ArrayList<SingleLinkedList<Tuple<K, V>>> _arrayList;
 
-        string value;
-        string key;
-        
         float alpha;
+        
         int m = 0;
         int n = 0;
 
         public void Put(K key, V value)
         {
-            int index = GetIndexFromKey();
+            int index = key.GetHashCode() % 800000;
 
             if (_arrayList[index] != null)
             {
@@ -62,7 +60,7 @@ namespace Hashtable
 
         public V Get(K key)
         {
-            int index = GetIndexFromKey();
+            int index = key.GetHashCode();
 
             if (_arrayList[index] != null)
             {
@@ -77,7 +75,7 @@ namespace Hashtable
 
         public bool Remove(K key)
         {
-            int index = GetIndexFromKey();
+            int index = key.GetHashCode();
 
             if (_arrayList[index] != null)
             {

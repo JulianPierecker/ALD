@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Hashtable;
+using Hashtables;
 
 namespace HashtableTestApp
 {
@@ -16,7 +16,6 @@ namespace HashtableTestApp
             var test = hasttab.Get(10);
             hasttab.Remove(10);
             hasttab.Put(8, 6);
-            int test1 = 10;
         }
     }
 }

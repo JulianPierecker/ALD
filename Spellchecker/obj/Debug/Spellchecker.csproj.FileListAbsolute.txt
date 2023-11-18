@@ -26,3 +26,7 @@ C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.exe
 C:\Users\piere\source\repos\ALD\Spellchecker\obj\Debug\Spellchecker.pdb
 C:\Users\piere\source\repos\ALD\ALD\Spellchecker\bin\Debug\ArrayList.dll
 C:\Users\piere\source\repos\ALD\ALD\Spellchecker\bin\Debug\ArrayList.pdb
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Hashtable.dll
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Person.dll
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Hashtable.pdb
+C:\Users\piere\source\repos\ALD\Spellchecker\bin\Debug\Person.pdb
