@@ -21,31 +21,31 @@ namespace ArrayList
     {
         public ArrayList(T[] initArray) 
         {
-            m_array = new Node<T>[initArray.Length];
+            _array = new Node<T>[initArray.Length];
             for (int i = 0; i < initArray.Length; i++)
             {
-                m_array[i] = new Node<T>(initArray[i]);
+                _array[i] = new Node<T>(initArray[i]);
             }
             
-            m_length_puffer = initArray.Length;
+            _length_puffer = initArray.Length;
         }
 
-        int m_length_puffer = 0;
-        public Node<T>[] m_array;
+        int _length_puffer = 0;
+        public Node<T>[] _array;
 
         public T this[int index]
         {
             get
             {
-                if (index >= 0 && index < m_array.Length)
-                    return m_array[index].Value;
+                if (index >= 0 && index < _array.Length)
+                    return _array[index].Value;
                 else
                     throw new IndexOutOfRangeException();
             }
             set
             {
-                if (index >= 0 && index < m_array.Length)
-                    m_array[index].Value = value;
+                if (index >= 0 && index < _array.Length)
+                    _array[index].Value = value;
                 else
                     throw new IndexOutOfRangeException();
             }
@@ -53,61 +53,61 @@ namespace ArrayList
 
         public void Add(T item)
         {
-            if (m_array.Length == 0)
-                Array.Resize<Node<T>>(ref m_array, 1);
-            else if (m_length_puffer >= m_array.Length)
-                Array.Resize<Node<T>>(ref m_array, 2 * m_array.Length);
+            if (_array.Length == 0)
+                Array.Resize<Node<T>>(ref _array, 1);
+            else if (_length_puffer >= _array.Length)
+                Array.Resize<Node<T>>(ref _array, 2 * _array.Length);
 
             // Hinzufügen neuer Werte
-            m_array[m_length_puffer] = new Node<T>(item);
+            _array[_length_puffer] = new Node<T>(item);
 
-            m_length_puffer++;
+            _length_puffer++;
         }
 
         public void InsertAt (int index, T item) 
         {
             // Überprüfen, ob Index innerhalb des Arrays möglich ist
-            if (index < 0 || index >= m_length_puffer)
+            if (index < 0 || index >= _length_puffer)
                 throw new IndexOutOfRangeException();
 
-            if (m_length_puffer >= m_array.Length)
-                Array.Resize<Node<T>>(ref m_array, 2 * m_array.Length);
+            if (_length_puffer >= _array.Length)
+                Array.Resize<Node<T>>(ref _array, 2 * _array.Length);
             
             // Items ab dem gegebenen Index um 1 nach hinten kopieren
-            Array.Copy(m_array, index, m_array, index + 1, m_array.Length - (index + 1));
+            Array.Copy(_array, index, _array, index + 1, _array.Length - (index + 1));
 
             // Item, am gegebenen index einfügen
-            m_array[index] = new Node<T>(item);
+            _array[index] = new Node<T>(item);
 
-            m_length_puffer++;
+            _length_puffer++;
         }
         
         public bool RemoveAt (int index) 
         {
             // Überprüfen, ob Index innerhalb des Arrays möglich ist
-            if (index < 0 || index >= m_array.Length)
+            if (index < 0 || index >= _array.Length)
                 throw new IndexOutOfRangeException();
 
             // Items ab dem gegebenen Index um 1 nach vorn kopieren
             // Item, welches entfernt werden soll, wird durch das Item des Nachfolgeitems überschrieben
-            Array.Copy(m_array, index + 1, m_array, index, m_array.Length - (index + 1));
+            Array.Copy(_array, index + 1, _array, index, _array.Length - (index + 1));
 
-            m_length_puffer--;
+            _length_puffer--;
 
-            if (m_length_puffer <= m_array.Length / 2)
-                Array.Resize<Node<T>>(ref m_array, m_array.Length / 2);
+            if (_length_puffer <= _array.Length / 2)
+                Array.Resize<Node<T>>(ref _array, _array.Length / 2);
 
             return true;
         }
 
         public bool Remove(T item)
         {
-            for (int i = 0; i < m_array.Length; i++)
+            for (int i = 0; i < _array.Length; i++)
             {
-                if (m_array[i].Value != null)
+                if (_array[i].Value != null)
                 {
                     // Wenn gesuchtes Item dem Item in dem Array entspricht, dann an diesem Index löschen
-                    if (m_array[i].Value.Equals(item))
+                    if (_array[i].Value.Equals(item))
                     {
                         RemoveAt(i);
                         return true;
@@ -120,12 +120,12 @@ namespace ArrayList
 
         public void Clear()
         {
-            m_array = new Node<T>[0];
-            m_length_puffer = 0;
+            _array = new Node<T>[0];
+            _length_puffer = 0;
         }
 
         // Gibt Anzahl der hizugefügten Items zurück, nicht die tatsächliche Länge des Arrays
-        public int Count() => m_length_puffer;
+        public int Count() => _length_puffer;
 
     }
 }

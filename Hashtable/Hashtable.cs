@@ -1,27 +1,34 @@
 ﻿using ArrayList;
 using SingleLinkedList;
+using Mensch;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Hashtable
 {
     public class Hashtable<K,V>
     {
-        private SingleLinkedList<Tuple<K,V>> _initArray;
-        private ArrayList<SingleLinkedList<Tuple<K,V>>> _arrayList;
-        public Hashtable() 
+        public Hashtable(int length = 1) 
         {
-            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(new SingleLinkedList<Tuple<K, V>>[10]);
+            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(new SingleLinkedList<Tuple<K, V>>[length]);
         }
+
+        private SingleLinkedList<Tuple<K, V>> _initArray;
+        private ArrayList<SingleLinkedList<Tuple<K, V>>> _arrayList;
 
         string value;
         string key;
-
+        
+        float alpha;
+        int m = 0;
+        int n = 0;
 
         public void Put(K key, V value)
         {
@@ -49,6 +56,8 @@ namespace Hashtable
                 _arrayList.InsertAt(index, new SingleLinkedList<Tuple<K,V>>());
                 _arrayList[index].Add(new Tuple<K,V>(key, value));
             }
+            n++;
+            CheckReHashing();
         }
 
         public V Get(K key)
@@ -87,6 +96,8 @@ namespace Hashtable
                 if (tup != null)
                 {
                     _arrayList[index].Remove(tup);
+                    n--;
+                    CheckReHashing();
                     return true;
                 }
             }
@@ -96,6 +107,17 @@ namespace Hashtable
         private int GetIndexFromKey()
         { 
             return GetHashCode() % _arrayList.Count(); 
+        }
+
+        private void CheckReHashing()
+        {
+            m = _arrayList.Count();
+            alpha = n / m;
+            
+            if (alpha > 1.5)
+            {
+                //Array.Resize<ArrayList<SingleLinkedList<Tuple<K, V>>>>(ref _arrayList, m * 2);
+            }
         }
     }
 }

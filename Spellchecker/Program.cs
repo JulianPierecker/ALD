@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SingleLinkedList;
 using System.Collections;
 using Import;
+using System.Runtime.InteropServices;
 
 namespace Spellchecker
 {
