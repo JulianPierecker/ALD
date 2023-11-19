@@ -17,25 +17,24 @@ namespace Hashtables
     {
         public Hashtable(int length = 1) 
         {
-            _arrayList = new ArrayList<SingleLinkedList<Tuple<K,V>>>(_initArray);  
+            _array = new SingleLinkedList<Tuple<K, V>>[length];  
         }
 
-        private SingleLinkedList<Tuple<K, V>>[] _initArray = new SingleLinkedList<Tuple<K, V>>[800000];
-        private ArrayList<SingleLinkedList<Tuple<K, V>>> _arrayList;
+        private SingleLinkedList<Tuple<K, V>>[] _array;
+        private SingleLinkedList<Tuple<K, V>>[] _arrayCopy;
 
         float alpha;
-        
-        int m = 0;
         int n = 0;
+        int index = 0;
 
         public void Put(K key, V value)
         {
-            int index = key.GetHashCode() % 800000;
+            index = key.GetHashCode();
 
-            if (_arrayList[index] != null)
+            if (_array[index] != null)
             {
                 Tuple<K,V> tup = null;
-                foreach (Tuple<K, V> item in _arrayList[index])
+                foreach (Tuple<K, V> item in _array[index])
                 {
                    if (item.Item1.Equals(key))
                    {
@@ -47,12 +46,12 @@ namespace Hashtables
                    } 
                 }
                 if (tup != null)
-                    _arrayList[index].Add(tup);
+                    _array[index].Add(tup);
             }
             else
             {
-                _arrayList.InsertAt(index, new SingleLinkedList<Tuple<K,V>>());
-                _arrayList[index].Add(new Tuple<K,V>(key, value));
+                _array[index] = new SingleLinkedList<Tuple<K,V>>();
+                _array[index].Add(new Tuple<K,V>(key, value));
             }
             n++;
             CheckReHashing();
@@ -60,11 +59,11 @@ namespace Hashtables
 
         public V Get(K key)
         {
-            int index = key.GetHashCode();
+            index = key.GetHashCode();
 
-            if (_arrayList[index] != null)
+            if (_array[index] != null)
             {
-                foreach (Tuple<K, V> item in _arrayList[index])
+                foreach (Tuple<K, V> item in _array[index])
                 {
                     if (item.Item1.Equals(key))
                         return item.Item2;
@@ -77,10 +76,10 @@ namespace Hashtables
         {
             int index = key.GetHashCode();
 
-            if (_arrayList[index] != null)
+            if (_array[index] != null)
             {
                 Tuple<K, V> tup = null;
-                foreach (Tuple<K, V> item in _arrayList[index])
+                foreach (Tuple<K, V> item in _array[index])
                 {
                     if (item.Item1.Equals(key))
                     {
@@ -93,7 +92,7 @@ namespace Hashtables
                 }
                 if (tup != null)
                 {
-                    _arrayList[index].Remove(tup);
+                    _array[index].Remove(tup);
                     n--;
                     CheckReHashing();
                     return true;
@@ -102,20 +101,16 @@ namespace Hashtables
             return false;
         }
 
-        private int GetIndexFromKey()
-        { 
-            return GetHashCode() % _arrayList.Count(); 
-        }
-
         private void CheckReHashing()
         {
-            m = _arrayList.Count();
-            alpha = n / m;
+            alpha = n / _array.Count();
             
             if (alpha > 1.5)
             {
-                //Array.Resize<ArrayList<SingleLinkedList<Tuple<K, V>>>>(ref _arrayList, m * 2);
+                Array.Resize(ref _array, _array.Count() * 2);
+                Array.Copy((SingleLinkedList<Tuple<K, V>>[])_array.Clone(), _array, _array.Count() * 2);
             }
+                
         }
     }
 }

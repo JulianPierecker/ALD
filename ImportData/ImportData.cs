@@ -27,7 +27,7 @@ namespace Import
 
         private Hashtable<string, string> _hasttable = new Hashtable<string, string>();
 
-        private Hashtable<Person, string> _hasttable_refTest = new Hashtable<Person, string>();
+        private Hashtable<Person, string> _hasttable_refTest = new Hashtable<Person, string>(10);
 
         private string _filename;
 
@@ -107,13 +107,11 @@ namespace Import
         {
             Person per1 = new Person("Hubert", "m", 60);
             Person per2 = new Person("Luki", "m", 43);
-            per1.Hashsize = 10;
-            per2.Hashsize = 10;
 
             _hasttable_refTest.Put(per1, "Hallo Hubert");
             _hasttable_refTest.Put(per2, "Hallo Luki");
 
-            per1.Alter = 61;
+            //per1.Alter = 61;
 
             string value = _hasttable_refTest.Get(per1);
             if (value == "Hallo Hubert")

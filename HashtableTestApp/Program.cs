@@ -11,11 +11,9 @@ namespace HashtableTestApp
     {
         static void Main(string[] args)
         {
-            Hashtable<int, int> hasttab = new Hashtable<int,int>(1);
+            Hashtable<int,int> hasttab = new Hashtable<int,int>(20);
             hasttab.Put(10, 5);
-            var test = hasttab.Get(10);
             hasttab.Remove(10);
-            hasttab.Put(8, 6);
         }
     }
 }
