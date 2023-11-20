@@ -58,17 +58,14 @@ namespace Import
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _sllList.Add(s);
             timerSLL.Stop();
-            Console.WriteLine("Auslesezeit der SingleLinkedList Add-Methode: {0}", timerSLL.Elapsed);
+            Console.WriteLine("Auslesezeit der SingleLinkedList Add-Methode: {0}", timerSLL.Elapsed.TotalMilliseconds);
 
             timerArrayList.Reset();
 
             timerSLL.Start();
             _sllList.Remove("zytotoxisches");
             timerSLL.Stop();
-            Console.WriteLine("Auslesezeit der SingleLinkedList Remove-Methode: {0}", timerSLL.Elapsed);
-
-
-
+            Console.WriteLine("Auslesezeit der SingleLinkedList Remove-Methode: {0}", timerSLL.Elapsed.TotalMilliseconds);
         }
 
         public void ReadDataFromFileToArrayList()
@@ -77,14 +74,14 @@ namespace Import
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _arrayList.Add(s);
             timerArrayList.Stop();
-            Console.WriteLine("Auslesezeit der ArrayList Add-Methode: {0}", timerArrayList.Elapsed);
+            Console.WriteLine("Auslesezeit der ArrayList Add-Methode: {0}", timerArrayList.Elapsed.TotalMilliseconds);
 
             timerArrayList.Reset();
 
             timerArrayList.Start();
             _arrayList.Remove("zytotoxisches");
             timerArrayList.Stop();
-            Console.WriteLine("Auslesezeit der ArrayList Remove-Methode: {0}", timerArrayList.Elapsed);
+            Console.WriteLine("Auslesezeit der ArrayList Remove-Methode: {0}", timerArrayList.Elapsed.TotalMilliseconds);
         }
 
         public void ReadDataFromFileToHashtable()
@@ -93,14 +90,14 @@ namespace Import
             foreach (string s in File.ReadAllLines(Directory.GetCurrentDirectory() + "\\" + _filename))
                 _hasttable.Put(s, s);
             timerHashtable.Stop();
-            Console.WriteLine("Auslesezeit der Hashtable Put-Methode: {0}", timerHashtable.Elapsed);
+            Console.WriteLine("Auslesezeit der Hashtable Put-Methode: {0} mit ReHashFactor von {1}", timerHashtable.Elapsed.TotalMilliseconds, _hasttable.Rehash_factor);
 
             timerHashtable.Reset();
 
             timerHashtable.Start();
             _hasttable.Remove("zytotoxisches");
             timerHashtable.Stop();
-            Console.WriteLine("Auslesezeit der Hashtable Remove-Methode: {0}", timerHashtable.Elapsed);
+            Console.WriteLine("Auslesezeit der Hashtable Remove-Methode: {0}", timerHashtable.Elapsed.TotalMilliseconds);
         }
 
         public void TestReferenceHashtable()
@@ -111,13 +108,20 @@ namespace Import
             _hasttable_refTest.Put(per1, "Hallo Hubert");
             _hasttable_refTest.Put(per2, "Hallo Luki");
 
-            //per1.Alter = 61;
+            per1.Alter = 61;
 
-            string value = _hasttable_refTest.Get(per1);
-            if (value == "Hallo Hubert")
-                Console.WriteLine("Hubert wurde gefunden, trotz Wertänderung");
-            else
+            try
+            {
+                string value = _hasttable_refTest.Get(per1);
+                if (value == "Hallo Hubert")
+                    Console.WriteLine("Hubert wurde gefunden, trotz Wertänderung");
+            }
+            catch
+            {
                 Console.WriteLine("Hubert wurde nicht gefunden, aufgrund einer Wertänderung");
+            }
+
+                
 
         }
     }

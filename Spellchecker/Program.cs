@@ -18,8 +18,8 @@ namespace Spellchecker
             // Einlesen der Daten aus german.dic in eine SLL und ArrayList
             ImportData data = new ImportData("german.dic");
 
-            //data.ReadDataFromFileToSLL();
-            //data.ReadDataFromFileToArrayList();
+            data.ReadDataFromFileToSLL();
+            data.ReadDataFromFileToArrayList();
             data.ReadDataFromFileToHashtable();
             //data.TestReferenceHashtable();
 

@@ -13,7 +13,9 @@ namespace HashtableTestApp
         {
             Hashtable<int,int> hasttab = new Hashtable<int,int>(20);
             hasttab.Put(10, 5);
-            hasttab.Remove(10);
+            //hasttab.Remove(10);
+
+            int test = hasttab.Get(10);
         }
     }
 }

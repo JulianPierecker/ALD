@@ -27,7 +27,7 @@ namespace Mensch
 
         public override int GetHashCode()
         {
-            return string.Format("{0}_{1}_{2}", Name, Geburtsort, Alter).GetHashCode() % 10;
+            return string.Format("{0}_{1}_{2}", Name, Geburtsort, Alter).GetHashCode();
         }
     }
 
