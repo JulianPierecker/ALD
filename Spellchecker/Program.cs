@@ -21,7 +21,7 @@ namespace Spellchecker
             data.ReadDataFromFileToSLL();
             data.ReadDataFromFileToArrayList();
             data.ReadDataFromFileToHashtable();
-            //data.TestReferenceHashtable();
+            data.TestReferenceHashtable();
 
             Console.WriteLine("Bitte gib einen Satz ein:");
             string[] input_seperated = Console.ReadLine().Split(' ');

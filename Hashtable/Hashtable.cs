@@ -50,37 +50,38 @@ namespace Hashtables
 
             if (_array[_index] != null)
             {
-                Tuple<K,V> tup = null;
+                Tuple<K, V> existingTuple = null;
+
                 foreach (Tuple<K, V> item in _array[_index])
                 {
-                   if (item.Item1.Equals(key))
-                   {
-                        tup = new Tuple<K, V>(item.Item1, value); 
-                   }
+                    if (item.Item1.Equals(key))
+                    {
+                        existingTuple = item;
+                        break;
+                    }
                 }
-                if (tup != null)
+
+                if (existingTuple != null)
                 {
-                    _array[_index].Add(tup);
-                    _n++;
-                    CheckReHashing();
+                    _array[_index].Remove(existingTuple);
+                    _array[_index].Add(new Tuple<K, V>(key, value));
                 }
                 else
                 {
-                    tup = new Tuple<K, V>(key, value);
-                    _array[_index].Add(tup);
+                    _array[_index].Add(new Tuple<K, V>(key, value));
                     _n++;
-                    CheckReHashing();
                 }
-                    
             }
             else
             {
-                _array[_index] = new SingleLinkedList<Tuple<K,V>>();
-                _array[_index].Add(new Tuple<K,V>(key, value));
+                _array[_index] = new SingleLinkedList<Tuple<K, V>>();
+                _array[_index].Add(new Tuple<K, V>(key, value));
                 _n++;
-                CheckReHashing();
             }
-            
+
+            CheckReHashing();
+
+
         }
 
         public V Get(K key)
